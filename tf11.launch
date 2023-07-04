@@ -1,0 +1,11 @@
+<launch>
+
+  <!-- 设置 ROS 参数 -->
+  <arg name="world_frame" default="world"/>
+  <arg name="map_frame" default="map"/>
+
+  <!-- 启动 TF 转换节点 -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_map_tf_publisher"
+        args="0 0 0 0 0 0 ${map_frame} ${world_frame}"/>
+
+</launch>
